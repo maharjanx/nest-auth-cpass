@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  nest-auth:
+    container_name: nest-auth
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: nest-auth
+    network_mode: host
+    ports:
+      - 4000:4000
+    restart: always
+    volumes:
+      - ${PWD}/:/nest-auth
